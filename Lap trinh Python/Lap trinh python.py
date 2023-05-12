@@ -18,14 +18,13 @@
 # b = ('i am', a)                               # b là tuple
 # print(type(b))
 # print(ord('a'))                                #hàm lấy mã ascii
-
-# ***************************************************************************List
+#***************************************************************************List
 #    0 1 2 3    #thứ tự của list
 # -4,-3,-2,-1   #thứ tự của list
-a=[1,2,3,4]
+#a=[1,2,3,4]
 #dir(list)                  #sẽ ra các hàm thuộc list
 #print(dir(list))
-del a[2]                      #xóa phần tử thứ 2 trong list
-print(a)
-b=max(a)                    #sẽ lỗi nếu list chứa str và int
-b=min(a)                    #sẽ lỗi nếu list chứa str và int
+#del a[2]                      #xóa phần tử thứ 2 trong list
+#print(a)
+#b=max(a)                    #sẽ lỗi nếu list chứa str và int
+#b=min(a)                    #sẽ lỗi nếu list chứa str và int

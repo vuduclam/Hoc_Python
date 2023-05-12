@@ -45,7 +45,7 @@
 #b=a*5                                        #sẽ nhân chuỗi lên
 #print(b)
 
-a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; khi viết liền các biến
+#a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; khi viết liền các biến
 #c=  b in a                                  #b có nằm trong a thì true
 #print (c)
 #c1= a  + 'để hùng' + b ;                    #cộng chuỗi
@@ -146,9 +146,9 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #b=[i for i in range(3)]                #ngoặc vuông thì không cần list(b)
 #print(c)
 #c=[[i,i*2] for i in range(1,3)]         #in list từ 1 tới 2 
-#d=list('kteam') #hoặc 
-#d=list([1,2,3]) #hoặc 
-#d=list((1,2,3))
+#d=list('kteam')  #hoặc 
+#d=list([1,2,3])  #hoặc 
+#  list((1,2,3))
 #print(d)
 
 #********************************************************************toán tử list gần giống chuỗi
@@ -159,23 +159,36 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #a=[1,2,'a','b',[3,4]]
 #b=len(a)                                 #độ dài của list đếm từ 1
 #b=a[0]                                   #lấy phần tử tại vị trí 0 của list
-#b=a[::-1]                                #lấy phần tử thứ 1 tới 2 (a[1:] tới hết; a[:3]từ đầu tới 2; a[::] hết; a[::-1] đảo lại)
+#b=a[::-1]                                #a[::-1] đảo lại list
+#b=a[0:4]                                 #lấy phần tử thứ 0 tới 4 (a[1:] tới hết; a[:3]từ đầu tới 2; a[::] hết; a[::-1] đảo lại)
 #b=a[::2]                                 #lấy phần tử cứ bước nhảy 2 thì lấy 1 chữ số    a[start:stop;step]
 #b1=a[4][1]                               #lấy phần tử tại vị trí 4 và lấy phần tử vị trí 1 của list vừa lấy ra
 #print(b)
 
-#********************************************************************thay đổi phần tử trong list
+#với list khi dùng toán tử này sẽ khác nhau bộ nhớ
+#a=[1,2]
+#print(id(a))
+#a=a+[6]
+#print(id(a))                 
+    
+#chỉ với list khi dùng toán tử này sẽ giống nhau bộ nhớ
+#a=[1,2]
+#print(id(a))
+#a+=[3,4]
+#print(id(a))
+
+#********************************************************************thay đổi phần tử trong list (tuple không thể)
 #a=[1,2,'a','b',[3,4]]
 #a[1]= 'kteam'                            #muốn thay đổi phần tử trong list thì gọi ra và gán 1 tên khác
 #a=[[1,3,4],[5,5,6]] #*
 #b=a     
-#b[1]='jjkk'                              #nếu gán list với list thì khi thay đổi giá trị b, giá trị a sẽ chạy đồng thời (cùng bộ nhớ)
+#b[1]='jjkk'                              #nếu b=a thì b thay đổi, a thay đổi theo (cùng bộ nhớ)
 #b=list(a)        
-#b[1]='kteam'                             #nên là b=list(a) hoặc b =a.copy() sẽ không thay đổi a khi thay b (khác bộ nhớ)
+#b[1]='kteam'                             #    b=list(a) hoặc b =a.copy() b thay đổi, a không thay đổi (khác bộ nhớ)
 #b =a.copy()
-#print(a)                                 
-#print(b)
-#b[0][0]='kteam'                           #nếu thay đổi giá trị trong list con thì giá trị cũng sẽ chạy theo dù b=list(a) hoặc b =a.copy()
+#print(id(a))                                
+#print(id(b))
+#b[0][0]='kteam'                           #nếu thay đổi giá trị trong list con thì b thay đổi, a thay đổi theo dù b=list(a) hoặc b =a.copy()
 #print(a)
 #print(b)#*
 
@@ -183,8 +196,8 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #a=[1,2,3,4]
 #b=a.count(1)                     #đếm số lượng phần tử 1 trong list 
 #c=a.index(3)                     #vị trí của phần tử 3 trong list
-#d=a.copy()                       #a không thay đổi khi thay đổi d
-#c=a.clear()                      #kết quả c ra None và a ra []
+#d=a.copy()                       #d thay đổi, a không thay đổi
+#c=a.clear()                      #kết quả c ra None và a ra []*****
 #print(c)
 #tien=[34,45] #*
 #gau=tien.copy()
@@ -193,8 +206,9 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #print (gau is tien)
 #gau=[4,5]                         #vì đã gán qua list khác nên sẽ ra 2 kết quả khác nhau cho dù trước đó gau=tien, =list(tien), tien.copy()
 #gau.clear()                       #sẽ cùng [] nếu gau=tien, còn khác nhau nếu =list(tien), tien.copy()
-#print(tien)
-#print(gau) #*
+#print(id(tien))
+#print(id(gau)) #*
+#*****************************************************************************************thêm phần tử trong list
 #a=[1,9,2,3,9]
 #a.append(4,5,6,7)                 #sẽ thêm cụm phần tử vào cuối cùng list trên  (nhưng tuple không có phương thức này mà chỉ có a+= )
 #a.extend([4,5,6,7])               #sẽ thêm từng phần tử 4,5 vào list trên ở cuối
@@ -208,24 +222,43 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #print(a)
 
 #############*********************************************************************Tuple (có thể chứa nó và những cái khác)
-#a=(1,2,3)                            #kiểu dữ liệu Tuple 
-#a=(1.5)                              #sẽ hiểu là kiểu dữ liệu int
-#a=tuple([1,2])                       #hoặc tuple((1,2,3))
+a=(1,(2,3),3)     #hoặc
+#a=('a','b',3) #hoặc  
+#a=(1,)        #hoặc
+#a=('a',)      #hoặc
+#a=1,2,3       #hoặc
+#a='a','b',3   #hoặc      
+#a=1,          #hoặc
+#a='a',        #hoặc                  #kiểu dữ liệu Tuple 
+#a=(2)                                #sẽ hiểu là kiểu dữ liệu int, float nếu chỉ có 1 số hoặc kiểu dữ liệu str nếu chỉ có 1 chữ
+#a=tuple([1,2,3]) #hoặc 
+#  tuple((1,2,3))
 #a=(i for i in range (3) if i % 2 == 0)
+b=a                           #phải có tuple(a) để phân biệt list(a) nếu trên là dấu ngoặc tròn, ngoặc vuông không cần
+print(a)
+print(b)
+#print(type(a))
 
-#b=tuple(a)                           #phải có tuple(a) để ra kết quả
+########************************************************************************ thêm phần tử tuple
+#a+=(4,5,6)
 #print(a)
-#*****toán tử tuple giống chuỗi
-#a=(1,2,[1,2])
+
+########************************************************************************ toán tử tuple giống chuỗi
+#a=(1,3,[1,2])
 #b= a + ('one','two')
 #a*=2                                 #nhân tuple với 1 số, không nhân tuple với tuple được
 #b= 1 in a                            #kiểm tra 1 có nằm trong tuple không, kết quả True-False
 #b=a[0]                               #lấy phần tử tại vị trí 0 của tuple
 #b=len(a)                             #độ dài của tuple
 #b=a[-1]                              #lấy phần tử cuối cùng của tuple
-#*****đếm số lượng phần tử trong tupple
-#b=a.count(2)                         #đếm số lượng phần tử 1 trong tuple 
-#c=a.index(2)                         #vị trí của phần tử 2 trong tuple
+
+#####*****************************************************************************đếm số lượng phần tử trong tupple
+#b=a.count(3)                         #đếm số lượng phần tử 3 trong tuple 
+#b=a.index(1)                          #vị trí của phần tử 1 trong tuple
 #print(b)
 #*****không thay đổi được phần tử trong tuple như list được
 
+#############*********************************************************************
+#List []:  có thứ tự, chứa trùng lặp, thay đổi được phần tử
+#Tuple(): có thứ tự, chứa trùng lặp, không thay đổi được phần tử
+#Set{}: theo thứ tự khác nhau mỗi lần enter, không chứa trùng lặp

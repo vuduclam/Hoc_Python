@@ -153,13 +153,13 @@
 #e+=['one','two']                         # viết tắt của e=e+['one','two'] và list cộng list, chuỗi cộng list sẽ báo lỗi
 #e*=2                 #nhân list với 1 số, không nhân list với list được
 #b= 1 in e                              #kiểm tra 1 có nằm trong list không, kết quả True-False
-#a=[1,2,'a','b',[3,4]]
+a=[1,2,'a','b',[3,4]]
 #b=len(a)                            #độ dài của list
 #b=a[0]                          #lấy phần tử tại vị trí 0 của list
-#b=a[1:3]                             #lấy phần tử trong dải 1 tới 3 (a[1:]; a[:3]; a[::]; a[::-1])
-#b=a[::2]                         #lấy phần tử cứ bước nhảy 2 thì lấy 1 chữ số
+b=a[::-1]                             #lấy phần tử thứ 1 tới 2 (a[1:] tới hết; a[:3]từ đầu tới 2; a[::] hết; a[::-1] đảo lại)
+#b=a[::2]                         #lấy phần tử cứ bước nhảy 2 thì lấy 1 chữ số    a[start:stop;step]
 #b1=a[4][1]                           #lấy phần tử tại vị trí 4 và lấy phần tử vị trí 1 của list vừa lấy ra
-#print(e)
+print(b)
 
 #********************************************************************thay đổi phần tử trong list
 #a=[1,2,'a','b',[3,4]]
@@ -174,7 +174,7 @@
 #print(b) #*
 
 #*****************************************************************************************đếm số lượng phần tử trong list
-a=[1,2,3,4]
+#a=[1,2,3,4]
 #b=a.count(1)                   #đếm số lượng phần tử 1 trong list 
 #c=a.index(3)                     #vị trí của phần tử 3 trong list
 #d=a.copy()                    #a không thay đổi khi thay đổi d

@@ -28,3 +28,13 @@
 #print(a)
 #b=max(a)                    #sẽ lỗi nếu list chứa str và int
 #b=min(a)                    #sẽ lỗi nếu list chứa str và int
+#***************************************************************************
+#from pprint import pprint            #pprint sẽ in ra xuống dòng nếu list đó dài
+#a=[1,2,3]
+#b=a     
+#print(a,b)                              
+#print (b is a)                           #True
+#b=a.copy()
+#print (b is a)                           #False vì b và a nằm trên 2 bộ nhớ khác nhau
+#print(id(a),id(b))                        #hàm id kiểm tra vị trí bộ nhớ
+#b=a[start:stop;step]                      #lấy ra list mới 

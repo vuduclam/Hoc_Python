@@ -167,37 +167,41 @@ a= 'lamlamgi' ; b='A'                        #phải ngăn cách bằng dấu ; 
 #********************************************************************thay đổi phần tử trong list
 #a=[1,2,'a','b',[3,4]]
 #a[1]= 'kteam'                            #muốn thay đổi phần tử trong list thì gọi ra và gán 1 tên khác
-#a=[1,3,4] #*
-#b=a                                      #nếu gán list với list thì khi thay đổi giá trị b, giá trị a sẽ chạy đồng thời.
-#b=list(a)
-#print(a)                                 #nên là b=list(a) hoặc b =a.copy() sẽ không thay đổi a khi thay b.
+#a=[[1,3,4],[5,5,6]] #*
+#b=a     
+#b[1]='jjkk'                              #nếu gán list với list thì khi thay đổi giá trị b, giá trị a sẽ chạy đồng thời (cùng bộ nhớ)
+#b=list(a)        
+#b[1]='kteam'                             #nên là b=list(a) hoặc b =a.copy() sẽ không thay đổi a khi thay b (khác bộ nhớ)
+#b =a.copy()
+#print(a)                                 
 #print(b)
-#b[0]='kteam'                             #nếu thay đổi giá trị trong list con thì giá trị cũng sẽ chạy theo (a=[[1,2,3],[4,5,6] ///b[0][0]='kteam')
+#b[0][0]='kteam'                           #nếu thay đổi giá trị trong list con thì giá trị cũng sẽ chạy theo dù b=list(a) hoặc b =a.copy()
 #print(a)
-#print(b) #*
+#print(b)#*
 
 #*****************************************************************************************đếm số lượng phần tử trong list
 #a=[1,2,3,4]
 #b=a.count(1)                     #đếm số lượng phần tử 1 trong list 
 #c=a.index(3)                     #vị trí của phần tử 3 trong list
 #d=a.copy()                       #a không thay đổi khi thay đổi d
-#a.clear()                        #kết quả c ra None và a ra []
-#print(a)
+#c=a.clear()                      #kết quả c ra None và a ra []
+#print(c)
 #tien=[34,45] #*
-#gau=tien
+#gau=tien.copy()
 #print(tien)
 #print(gau)
-#gau=[]                            #vì đã gán qua list khác nên sẽ ra 2 kết quả khác nhau
-#gau.clear()                       #sẽ cùng []
+#print (gau is tien)
+#gau=[4,5]                         #vì đã gán qua list khác nên sẽ ra 2 kết quả khác nhau cho dù trước đó gau=tien, =list(tien), tien.copy()
+#gau.clear()                       #sẽ cùng [] nếu gau=tien, còn khác nhau nếu =list(tien), tien.copy()
 #print(tien)
 #print(gau) #*
 #a=[1,9,2,3,9]
-#a.append([4,5,[6,7]])             #sẽ thêm phần tử 4 hoặc [4,5] vào list trên  (nhưng tuple không có phương thức này mà chỉ có a+= )
-#a.extend([4,5,[6,7]])             #sẽ thêm từng phần tử 4,5 vào list trên ở cuối
-#a.insert(1,9)                     #sẽ thêm phần từ 9 vào vị trí thứ 1
-#a.pop(0)                          #bỏ đi vị trí thứ 1 và nếu pop() thì tự động bỏ đi phần tử cuối cùng
-#a.remove(9)                       #bỏ đi phần tử 9 đầu tiên trong tất cả các số 9 trong list
-#del a[2]                          #bỏ đi vị trí thứ 2 trong list
+#a.append(4,5,6,7)                 #sẽ thêm cụm phần tử vào cuối cùng list trên  (nhưng tuple không có phương thức này mà chỉ có a+= )
+#a.extend([4,5,6,7])               #sẽ thêm từng phần tử 4,5 vào list trên ở cuối
+#a.insert(1,3)                     #sẽ thêm phần từ 3 vào vị trí thứ 1
+#b=a.pop(1)                        #bỏ đi vị trí thứ 1 và nếu pop() thì tự động bỏ đi phần tử cuối cùng và trả được giá trị khi in ra 
+#b=a.remove(9)                     #bỏ đi phần tử 9 đầu tiên trong tất cả các số 9 trong list và không trả được giá trị khi in ra
+#del a[2]                          #bỏ đi vị trí thứ 2 trong list và không gán biến được b=del a[2]
 #a.reverse()                       #đảo chiều list
 #a.sort()                                    #tự động sắp xếp theo chiều tăng dần
 #a.sort(key = None, reverse = True)          #True sẽ sắp xếp giảm dần, False sẽ sắp xếp tăng dần

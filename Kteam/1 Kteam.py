@@ -100,7 +100,7 @@
 # print (r4), #print (r1), print (r2), print (r3), print (r4)
 
 #############*************************************************************************
-# a='atCó gì hóta'
+# a='lam'
 # a1=a.capitalize()                      #viết hoa chữ cái đầu tiên
 # a2=a.upper()                           #viết hoa hết
 # a3=a.swapcase()                        # thường thành hoa, hoa thành thường
@@ -112,7 +112,8 @@
 # a9=a.replace('ó','L',2)                #số lượng thay 2 chữ ó
 # a10=a.strip('at')                      #cắt khoảng trắng hai đầu và kí tự được đề cập ----lstrip, rstrip.
 # a2=a.lower()                           #viết thường hết
-# print(a8),print(a9)
+# print(a8)
+# print(a9)
 # print(a2)
 
 #############*************************************************************************hàm trong string
@@ -152,8 +153,11 @@
 # print(d)
 
 #********************************************************************toán tử list gần giống chuỗi
-# e=[1,2]
-# e+=['one','two']                         #viết tắt của e=e+['one','two'] và list cộng list, chuỗi cộng list sẽ báo lỗi
+# e=[[1,2],[4,5]]
+# e+=['one','two']  #*****************       #viết tắt của e=e+['one','two'] và list cộng list, chuỗi cộng list sẽ báo lỗi
+# b=sum(e,[2,3])                             #sẽ tạo ra list đơn khác list trên và được cộng ở đầu tiên [2,3,1,2,4,5] # [[1,2],[4,5],2,3]
+# print(b)
+
 # e*=2                                     #nhân list với 1 số, không nhân list với list được
 # b= 1 in e                                #kiểm tra 1 có nằm trong list không, kết quả True-False
 # a=[1,2,'a','b',[3,4]]
@@ -163,7 +167,7 @@
 # b=a[0:4]                                 #lấy phần tử thứ 0 tới 4 (a[1:] tới hết; a[:3]từ đầu tới 2; a[::] hết; a[::-1] đảo lại)
 # b=a[::2]                                 #lấy phần tử cứ bước nhảy 2 thì lấy 1 chữ số    a[start:stop;step]
 # b1=a[4][1]                               #lấy phần tử tại vị trí 4 và lấy phần tử vị trí 1 của list vừa lấy ra
-# print(b)
+# print(e)
 
 #với list khi dùng toán tử này sẽ khác nhau bộ nhớ
 # a=[1,2]
@@ -260,8 +264,9 @@
 #*****không thay đổi được phần tử trong tuple như list được
 
 #############*********************************************************************
-# List []:  có thứ tự, chứa trùng lặp, thay đổi được phần tử
-# Tuple(): có thứ tự, chứa trùng lặp, không thay đổi được phần tử
-# Set{}: không thứ tự, không chứa trùng lặp
-a=(3,4)
-print(dir(tuple))
+# List []:             có thứ tự, chứa trùng lặp, thay đổi được phần tử
+# Tuple():             có thứ tự, chứa trùng lặp, không thay đổi được phần tử
+# Set{}:               không thứ tự, không chứa trùng lặp
+# Dict{Key:Value}:     có thứ tự, không trùng lặp, thay đổi được phần tử theo Key
+# a=(3,4)
+# print(dir(tuple))

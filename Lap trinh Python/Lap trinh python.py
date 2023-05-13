@@ -23,6 +23,7 @@
 # b = ('i am', a)                       #b là tuple
 # print(type(b))
 # print(ord('a'))                       #hàm lấy mã ascii
+# print(chr(97))                        #hàm từ mã ascii ra 
 
 #***************************************************************************List
 #    0 1 2 3                            #thứ tự của list
@@ -36,7 +37,7 @@
 # b=min(a)                               #sẽ lỗi nếu list chứa str và int
 # print(b)
 
-#***************************************************************************
+#***************************************************************************List
 # from pprint import pprint              #pprint sẽ in ra xuống dòng nếu list đó dài
 # a=[1,2,3]
 # b=a     
@@ -55,6 +56,15 @@
 # print(b)
 # print(id(a))
 # print(id(b))
+
+#***************************************************************************list sang chuỗi
+# a=['a','2','3']                               #join cho chuỗi
+# b=''.join(a)                                  #list thành chuỗi, thì list phải chứa chuỗi hết
+# a=['a',2,3]      
+# b='---'.join(map(str,a))                       #nếu list có số, phải convert sang chuỗi bằng map
+# print(b)                                       #'' có thể thêm vào 
+
+
 
 #***************************************************************************Set
 # Check những dòng trùng
@@ -95,11 +105,7 @@
 # print(a)
 # print(type(b))
 
-# a=['a','2','3']                                #list thành chuỗi, thì list phải chứa chuỗi hết
-# b=''.join(a)
-# a=['a',2,3]      
-# b='---'.join(map(str,a))                            #nếu list có số, phải convert sang chuỗi 
-# print(b)                                         #'' có thể thêm vào 
+
 
 # a=[1,2,3]
 # b=sum(a)                                  #cộng các giá trị trong list đơn bắt đầu từ 0
@@ -108,7 +114,37 @@
 # print(b)
 
 #***************************************************************************If-elif-else
-if 1>0:
-    print("1>0")
+# n=int(input("nhap so n: "))
+""" if n>0:
+    print("duong")
+elif n<0:
+    print("am")
 else:
-    print("1<=0")
+    print("0") """
+# print("duong" if n>0 else "am")                     #cú pháp ngắn gọn if else--không nên sử dụng
+""" a, b = map(int,input().split('0'))
+print(a if a<b else b) """
+# a, b=map(int,input().split())                       #nhập số theo 1 hàng
+                                                      #map có hàm sẵn sẽ nhanh hơn list comprehension, ngược lại map hàm tự định nghĩa lâu hơn
+# print(a)
+# a=4
+# print(eval('1+2+2.5'))                               #hàm đánh giá biểu thức nằm trong chuỗi
+# print(eval('a+2+2.5')) 
+# a,b=map(eval,input().split())                        #để có thể nhập số nguyên và thực
+# print(a)
+
+# a=[1,2,3,'4']
+# print(*a)                                               #sẽ phá list in ra 1 2 3 4
+# print(*a,sep="$")                                       #sẽ phá list in ra 1$2$3$4  
+
+# x=2.4567                                                  #làm tròn 2 chữ số sau thập phân--str
+# print(format(x,".2f"))
+
+# x=2.456                                                 #làm tròn chữ số trước thập phân--int
+# print(round(x))
+# x=2.456                                                 #làm tròn 2 chữ số sau thập phân--int
+# print(round(x,2))
+# print(pow(2,3))                                         #lũy thừa 2^3--int
+
+# a,b=[2,3]                                                 #tuple hoặc list in ra a=2--int                                          
+# print(type(a))

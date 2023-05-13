@@ -78,7 +78,10 @@
 # print (type(b)), #print (b), #print (c)
 # d='%s' %('1')
 # e="%.1f" %(1.44)                                #bắt buộc không có dấu nháy đơn hay kép, 1 là lấy sau dấu phẩy 1 chữ số
-# print (d), #print (e)
+# x=2.4567                                        #làm tròn 2 chữ số sau thập phân
+# print(type(format(x,".2f")))
+# print(d)
+# print(e)
 
 #########***************************************************************************** định dạng string bằng f
 # hh= f'aaaa'                                     #đơn hoặc kép
@@ -116,14 +119,21 @@
 # print(a9)
 # print(a2)
 
-#############*************************************************************************hàm trong string
+############*************************************************************************hàm trong string
+# a=['a','2','3']                               #join cho chuỗi
+# b=''.join(a)                                  #list thành chuỗi, thì list phải chứa chuỗi hết
+# a=['a',2,3]      
+# b='---'.join(map(str,a))                      #nếu list có số, phải convert sang chuỗi bằng map
+# print(b)                                      #'' có thể thêm vào 
+
+
 # a='vu duc lam'
 # b=a.split('u')                         #cắt các chữ u (kết quả trả sẽ nằm trong dấu ngoặc vuông-kiểu list)
-# a2=a.split(' ',1)                       #cắt số lượng 1 khoảng trắng  (kết quả trả sẽ nằm trong dấu ngoặc vuông-kiểu list)
-# a3=a.rsplit(' ',1)                      #cắt số lượng 1 khoảng trắng từ bên phải
+# a2=a.split(' ',2)                       #cắt số lượng 1 khoảng trắng  (kết quả trả sẽ nằm trong dấu ngoặc vuông-kiểu list)
+# a2=a.rsplit(' ',1)                      #cắt số lượng 1 khoảng trắng từ bên phải
 # a4=a.split('u')                        #cắt các chữ u
-# a5=a.rpartition('u')                   #cắt tại chữ u thành 3 phần tử (kết quả trả sẽ nằm trong dấu ngoặc tròn-kiểu tuple)
-# a6=a.partition('u')                    #nếu không có chữ y thì sẽ tạo ra 3 phần tử với 2 phần tử là khoảng trắng
+# a2=a.rpartition('u')                   #cắt tại chữ u thành 3 phần tử (kết quả trả sẽ nằm trong dấu ngoặc tròn-kiểu tuple)
+# a2=a.partition('y')                    #nếu không có chữ y thì sẽ tạo ra 3 phần tử với 2 phần tử là khoảng trắng
 # a7=a.count('u')                        #tìm số lượng chữ u
 # a8=a.count('c',1,5)                    #tìm số lượng chữ u trong vị trí 1 tới 4 của chuỗi
 # a9=a.startswith('v')                   #có bắt đầu bằng chữ v hay không (kết quả trả về True-False)
@@ -136,7 +146,7 @@
 # a16=a.isupper()                        #chuỗi viết hoa sẽ true, 1 chữ cái thường sẽ false
 # a17=a.isdigit()                        #chuỗi là số sẽ true '31313', chữ sẽ false '1231dsad'
 # a18=a.isspace()                        #chuỗi là khoảng trắng sẽ true ' ', chữ sẽ false '', 'aaas'
-# print (a18)
+# print (b)
 # print (a8)
 # print (a15)
 
@@ -222,9 +232,10 @@
 # b=a.remove(9)                     #bỏ đi phần tử 9 đầu tiên trong tất cả các số 9 trong list và không trả được giá trị khi in ra
 # del a[2]                          #bỏ đi vị trí thứ 2 trong list và không gán biến được b=del a[2]
 # a.reverse()                       #đảo chiều list
-# a.sort()                                    #tự động sắp xếp theo chiều tăng dần
+# a.sort()                                    #sắp xếp theo chiều tăng dần, nhưng không lấy ra được list ***********
 # a.sort(key = None, reverse = True)          #True sẽ sắp xếp giảm dần, False sẽ sắp xếp tăng dần
-# print(a)
+# b=sorted(a)                                   #sắp xếp theo chiều tăng dần, nhưng lấy ra được list
+# print(b)
 
 #############*********************************************************************Tuple (có thể chứa nó và những cái khác)
 # a=(1,(2,3),3)     #hoặc

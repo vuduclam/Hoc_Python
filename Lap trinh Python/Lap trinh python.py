@@ -1,9 +1,9 @@
 # ******************************************************************************************Toán tử
 # >=, <=, >, <, ==, !=, and, or, not sẽ ra giá trị True, False
 # Falsy bao gồm '', None. 0, 0j
-# print(1>2)                          #sẽ ra False
-# print(0 and 2)                      #vế đầu true sẽ trả giá trị thứ 2
-# print(3>1 or 2)                     #vế đầu false sẽ trả giá trị thứ 2
+# print(1>2)                            #sẽ ra False
+# print(0 and 2)                        #vế đầu true sẽ trả giá trị thứ 2
+# print(3>1 or 2)                       #vế đầu false sẽ trả giá trị thứ 2
 # age=34
 # print(f'i am {age}')                  #f là địng dạng string, type là string
 # print('i am', age)                    #type là tuple
@@ -34,8 +34,11 @@
 #a=[1,2,3]
 #b=a     
 #print(a,b)                              
-#print (b is a)                           #True
+#print (b is a)                         #True
 #b=a.copy()
-#print (b is a)                           #False khi dùng copy vì b và a nằm trên 2 bộ nhớ khác nhau
-#print(id(a),id(b))                        #hàm id kiểm tra vị trí bộ nhớ, giống nhau nếu b=a, khác nhau nếu copy
-#b=a[start:stop;step]                     #lấy ra list mới 
+#print (b is a)                         #False khi dùng copy vì b và a nằm trên 2 bộ nhớ khác nhau
+#print(id(a),id(b))                     #hàm id kiểm tra vị trí bộ nhớ, giống nhau nếu b=a, khác nhau nếu copy
+#b=a[start:stop;step]                   #lấy ra list mới 
+#***************************************************************************Set
+#Check những dòng trùng
+#help(set.pop)                          #Kiểm tra cách dùng hàm 

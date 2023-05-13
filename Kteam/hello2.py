@@ -2,38 +2,45 @@
 # Unhashable: thay đổi giá trị được như list[], dict
 
 #set chỉ chứa hashable object (tuple và chuỗi), không chứa được nó và list vì set và list là  unhashable object
-#a={1,(3,4),1,2}  #nó chỉ chứa phần tử 1 lần nếu phần tử đó có nhiều lần xuất hiện
-#print(a)
-#b={}  
-#print(type(b)) # cái này thuộc dict 
-#c={i for i in range (3)}
-#print(c)
-#a=set((1,1,5,7,8,3)) #hoặc set([1,2,3])
-#print(a)
-#a=set() #kết quả ra set()-là thuộc set
+# a={1,(3,4),1,2}                               #nó chỉ chứa phần tử 1 lần nếu phần tử đó có nhiều lần xuất hiện
+# print(a)
+# b={}  
+# print(type(b))                                #set rỗng sẽ thuộc dict 
+# c={i for i in range (3)}
+# print(c)
+# a=set((1,1,5,7,8,3)) #hoặc ***********
+# set([1,2,3])
+# print(a)
+# a=set()                                       #kết quả ra set()-là thuộc set
 #*********************************************************************************toán tử trong set
-#print(1 in {1,2,3}) #True vì có 1 trong set
-#print({1,2} in {1,2,3}) #False vì không có {1,2}
-#print({1,2,3,4}-{2}) #trừ set nếu set lớn trừ set nhỏ
-#print({1,2}-{1,2,3,4}) # kết quả ra set() vì nhỏ không trừ lớn
-#print({1,2,3}&{1,3,4,5}) #phần tử chung
-#print({1,2,3}|{2,3,4}) #kết hợp
-#print({1,2,3}^{2,3,4} #lấy phần tử không chung
-a={4,2,3}
-#a.clear()                           # kết quả ra set()
-#print(a)
-#a.pop()                             #bỏ phần tử đầu tiên
-#a.remove(3)                         #bỏ phần tử 3 trong set, nếu không có số đó sẽ báo lỗi
-#a.discard(5)                        #bỏ phần tử 3 trong set, nếu không có số đó sẽ không báo lỗi và vẫn là set đó
-#b=a.copy()
-#a.add(2,5)                          #nếu có phần tử đó rồi thì vẫn là set đó
-#a.update((1,(5,6),6))  #hoặc
-#a.update(['a',1.5,(2,3),4])               #mỗi lần enter thứ tự sẽ khác nhau, nhưng số nguyên theo thứ tự tăng dần                 
+# print(1 in {1,2,3})                          #True vì có 1 trong set
+# print({1,2} in {1,2,3})                      #False vì không có {1,2}
+# print({1,2,3,4}-{2})                         #trừ set nếu set lớn trừ set nhỏ
+# print({1,2}-{1,2,3,4})                       #kết quả ra set() vì nhỏ không trừ lớn
+# print({1,2,3}&{1,3,4,5})                     #phần tử chung
+# print({1,2,3}|{2,3,4})                       #kết hợp
+# print({1,2,3}^{2,3,4}                        #lấy phần tử không chung
+a={5,6,2,8}
+# a.clear()                           #kết quả ra set()
+# print(a)
+# a.pop()                               #bỏ phần tử bất kì
+# a.remove(3)                         #bỏ phần tử 3 trong set, nếu không có số đó sẽ báo lỗi
+# a.discard(5)                        #bỏ phần tử 3 trong set, nếu không có số đó sẽ không báo lỗi và vẫn là set đó
+# b=set(a)                            #khác bộ nhớ
+# b=copy(a)                           #Khác bộ nhớ
+# b=a                                 #Cùng bộ nhớ
+# b.clear()                           #ra set()
+# a.add(2,5)                          #nếu có phần tử đó rồi thì vẫn là set đó
+# a.update((1,(5,6),6))  #hoặc
+# a.update(['a',1.5,(2,3),4])         #mỗi lần enter thứ tự sẽ khác nhau, nhưng số nguyên theo thứ tự tăng dần                 
+# print(a)
+# a={1,2} #*
 print(a)
-#a={1,2} #*
-#print(id(a))
-#a.add(4)
-#print(id(a)) #*sẽ vẫn chung id
+# print(id(a))
+# a.add(4)
+# print(b)
+# print(id(b))  
+# print(c)                       
 
 #############***************************************************************************Dict (key:value) 
 #a={'name':'kteam','member':69}

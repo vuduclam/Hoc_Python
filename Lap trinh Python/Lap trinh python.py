@@ -124,8 +124,9 @@ else:
 # print("duong" if n>0 else "am")                     #cú pháp ngắn gọn if else--không nên sử dụng
 """ a, b = map(int,input().split('0'))
 print(a if a<b else b) """
-# a, b=map(int,input().split())                       #nhập số theo 1 hàng
-                                                      #map có hàm sẵn sẽ nhanh hơn list comprehension, ngược lại map hàm tự định nghĩa lâu hơn
+# a, b=map(int,input().split())                      #nhập số theo 1 hàng
+#                                                    #map có hàm sẵn sẽ nhanh hơn list comprehension, ngược lại map hàm tự định nghĩa lâu hơn
+                                                      
 # print(a)
 # a=4
 # print(eval('1+2+2.5'))                               #hàm đánh giá biểu thức nằm trong chuỗi
@@ -135,16 +136,84 @@ print(a if a<b else b) """
 
 # a=[1,2,3,'4']
 # print(*a)                                               #sẽ phá list in ra 1 2 3 4
-# print(*a,sep="$")                                       #sẽ phá list in ra 1$2$3$4  
+# print(*a,sep="$")                                     #sẽ phá list in ra 1$2$3$4  
 
 # x=2.4567                                                  #làm tròn 2 chữ số sau thập phân--str
 # print(format(x,".2f"))
 
-# x=2.456                                                 #làm tròn chữ số trước thập phân--int
-# print(round(x))
-# x=2.456                                                 #làm tròn 2 chữ số sau thập phân--int
-# print(round(x,2))
+# x=2.456                                                 
+# print(round(x))                                         #làm tròn chữ số trước thập phân--int
+# x=2.456                                                 
+# print(round(x,2))                                       #làm tròn 2 chữ số sau thập phân--int
 # print(pow(2,3))                                         #lũy thừa 2^3--int
 
-# a,b=[2,3]                                                 #tuple hoặc list in ra a=2--int                                          
+# a,b=[2,3]                                               #tuple hoặc list in ra a=2--int                                          
 # print(type(a))
+
+#***************************************************************************vòng lặp
+""" for i in range(3):
+    print (i)  """                                       #list(range(3)) chỉ từ 1 tới 2
+
+""" for i in range(3):
+    if i & 2 == 0:
+        print(i, end= ' ') """
+
+""" for i in range(4):                                         
+    print (i, end=' ')  """                                 #thêm end sẽ in ngang, còn không sẽ in dọc 
+
+""" b=[i for i in range(3)]                                 #b sẽ ra list
+b=(i for i in range(3))                                     #phải có lệnh list(b)
+print(list(b)) """
+
+""" s=input('nhập: ')
+while s != 'q':
+    print('hello')                                            #sẽ in hello vô tận
+    s=input('nhập: ')  """                                       
+
+#break: thoát hoàn toàn ra khỏi vòng lặp chứa nó
+#continue: bỏ qua các câu lệnh bên dưới nó và chuyển sang vòng lặp mới
+""" for i in range (10):
+    if i>5:
+        break                                        
+    print(i, end=' ') """
+
+""" for i in range (20):
+    if i > 10:
+        continue                                        
+    print(i, end=' ') """
+
+""" for i in range (10001):  ***********                                #for chạy hết sẽ in ra tới 20 rồi tới else 'success'
+    print(i, end=' ')
+else:
+    print('success')  """
+
+""" for _ in range (20):   
+    print('hello') """
+
+#đếm số lượng số nguyên tố
+""" a=0
+for i in range(1,1002):
+    if i == 1:
+        continue                                                 #đúng thì chạy lên vòng lặp
+    for n in range(1,int(i/2+2)):
+        if i == 2:
+            a+=1
+            break
+        else:
+            if n != 1 and i % n == 0:
+                break
+    else:
+        a+=1
+print(a) """
+
+#tính tổng của 1 số n
+""" n = 1234                                                  
+b = 0
+while n > 0:
+    a=n % 10
+    b += a
+    n //= 10
+print(b) """
+
+# print(list(range(2,2)))
+# print(int(3**0.5)+1)

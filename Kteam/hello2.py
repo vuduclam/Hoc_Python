@@ -54,13 +54,16 @@
 
 # a={}                                          #sẽ ra {}
 
-# ***a=dict(K='kteam',hk='howkteam')
-# ***b=('name','kteam'),('member',69)
-# a=dict(b)                                  #sẽ tạo cặp key:value như trên
-# ***iter=('name','kteam')
+# a=dict(K='kteam',hk='howkteam')
+# b=('name','kteam'),('member',69)
+# a=dict(b)                                  #sẽ tạo cặp key:value như trên (bắt buộc b phải đủ)
+# print(a)
+# print(b)
+# iter=('name','kteam')
 
-# a=dict.fromkeys(iter)                       #sẽ tạo 2 key như trên nhưng value là None
-# a=dict.fromkeys(iter,'m')                   #sẽ tạo 2 key như trên nhưng value là m
+# a=dict.fromkeys(iter)                       #sẽ tạo 2 key như trên nhưng value là None (không cần iter phải đủ)
+# a=dict.fromkeys(iter,'m')                 #sẽ tạo 2 key như trên nhưng value là m
+# print(a)
 
 # print(a['age'])                             #lấy giá trị value từ key
 # b=a.get('name')                             #lấy value của key, nếu không có key đó thì kq ra None

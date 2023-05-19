@@ -124,6 +124,10 @@ else:
 # print("duong" if n>0 else "am")                     #cú pháp ngắn gọn if else--không nên sử dụng
 """ a, b = map(int,input().split('0'))
 print(a if a<b else b) """
+
+# a=input('nhap so nguyen: ').split()                 #input().split(): ra list chứa string
+# print(a)
+
 # a, b=map(int,input().split())                      #nhập số theo 1 hàng
 #                                                    #map có hàm sẵn sẽ nhanh hơn list comprehension, ngược lại map hàm tự định nghĩa lâu hơn
                                                       
@@ -134,7 +138,7 @@ print(a if a<b else b) """
 # a,b=map(eval,input().split())                        #để có thể nhập số nguyên và thực
 # print(a)
 
-# a=[1,2,3,'4']
+# a=[1,2,3,'a']
 # print(*a)                                               #sẽ phá list in ra 1 2 3 4
 # print(*a,sep="$")                                     #sẽ phá list in ra 1$2$3$4  
 
@@ -192,7 +196,7 @@ else:
 
 #đếm số lượng số nguyên tố
 """ a=0
-for i in range(1,1002):
+for i in range(1,102):
     if i == 1:
         continue                                                 #đúng thì chạy lên vòng lặp
     for n in range(1,int(i/2+2)):
@@ -215,5 +219,171 @@ while n > 0:
     n //= 10
 print(b) """
 
-# print(list(range(2,2)))
+# print(list(range(2,2)))                                #ra list rỗng
 # print(int(3**0.5)+1)
+
+#***************************************************************************List, set, dict comprehension
+""" a = {85,52,3,4}                                      #list, tuple, dict
+for i in a:
+    print(i) """
+
+""" a={'ten': 'lam',
+   'tuoi': 23,
+   'gender': 'male'} """
+
+""" for i in a:                                             
+    print(i)  """                                            #in ra key
+
+""" for i in a.values():    
+    print(i)  """                                            #in ra values
+
+""" for i in a.items():
+    print(i)   """                                           #in ra tuple (key, values)
+
+""" for i in a.items():
+    c,d=i
+    print(c)
+    print(d)
+    print('-'*20) """
+
+#List comprehension (tạo ra cái mới)
+""" a=[45,5,65,32]                                     #cách dài
+b=[]
+for i in a:
+    y=i*2
+    b.append(y)
+print(i)                                               #có thể in ra i=cuối
+print(b) """
+
+""" a=[45,5,65,32]                                     #cách ngắn: List comprehension
+b= [i*2 for i in a]
+print(i)                                               #in ra i bị lỗi
+print(b) """
+
+#Set comprehension (tạo ra cái mới)
+""" a={'k','j'}                                           #in hoa trong set
+s={i.upper() for i in a}
+print(s) """
+
+#Dict comprehension (tạo ra cái mới)
+""" a={6: 2,
+   5: 23,
+   10: 5}
+b={i*2: y for i,y in a.items()}
+print(b) """
+
+#Zip phải có list(), tuple()
+""" a=(2,3,5)                                      #list, tuple cũng sẽ kết hợp được
+b=('a','f')
+print(list(zip(a,b)))                              #in ra list tuple, tuple tuple không có 5
+print(dict(zip(a,b))) """                          #in ra dict
+
+#enumerate 
+""" a=(2,3,5)
+print(list(enumerate(a)))                             #sẽ tạo ra list tuple kết hợp chỉ số thứ tự với list 
+print(list(enumerate(a,start=2))) """                  #sẽ tạo ra list tuple kết hợp chỉ số thứ tự với list bắt đầu từ 2
+
+# a=(2,3,5,48,97)
+# # b=[i for i in a if i%2!=0]                  
+# # print(sum(b))                                         #tính tổng các số lẻ trong list
+# c=0
+
+# a=(2,3,5,48,97)
+# b=[i*2 if i %2==0 else i*3 for i in a]
+# print(b)                                                #in ra list số chẵn nhân 2. số lẻ nhân 3
+
+
+# a=(2,3,5,48,97)                                           #in ra index - list
+# for b,c in enumerate(a):
+#     print(f'{b} - {c}')
+
+# a=(2,3,5,48,97)                                           #in ra index lẻ- list
+# for b,c in enumerate(a):
+#     if b %2!=0:
+#         print(b,c)
+
+# a=[[2,3],[5,48]]   #or a = [(2,3),(5,48)] 
+# b=dict(a)
+# print(b)
+
+#***************************************************************************Hàm (tái sử dụng lại code, gom lại các code lặp lại)
+""" def my():
+    print("hello")
+my() """                                               #phải gọi hàm ra 
+
+""" def my(a , b):                                         #để biến ở trong hàm, gọi hàm thì phải truyền vào giá trị
+    print(f'{a} {b}')
+my('asad','ass')   """                                     
+
+
+""" def my(a , b):
+    print(f'{a} {b}')
+my('asad','ass',1)   """                        #bị lỗi vì gọi hàm có 3 đối số
+
+""" def my(a , b = 'kk'):                              
+    print(f'{a} {b}')
+my('asad')     """                                      #b đã có rồi, nên gọi hàm có a
+# my(b='jkjk',a='asad')                                 #hoặc gán lại b,a
+
+""" def my(a,b='kk'):                                   #return trả về giá trị và các câu lệnh sau nó dừng, phải gán biến c cho hàm
+    return (f'{a} {b}')
+    return 0                                            #return 0 sẽ không chạy
+c= my('asad')
+print (c) """
+
+""" def my(a,b='kk'):  
+    if a:
+        return (f'{a} {b}')                             #return trả về giá trị và các câu lệnh sau nó dừng, phải gán biến c cho hàm
+    return (f'Kenny {b}')     
+
+c= my('asad')                                           #vì asad là True nên đúng return trên, có thể gán tên tại vị trí gọi hàm
+print (c) """
+
+""" def my(a=[]):                                           #nếu là list, lúc gọi hàm sẽ bị thay đổi giá trị khi gọi lại
+    a.append(2)
+    print(a)
+my()
+my() """
+
+""" a=[52,6]
+def my():
+    b=a+[1,3]
+    print(b)
+my()    """ 
+
+# print((lambda x,y:x+y)(1,2))
+""" a=lambda x,y:x+y                                     #số thì ra tổng 1,2 ra 3
+print(a('1','2')) """                                    #string thì ghép lại 12
+
+#Class function
+""" def greet(a):
+    print('hello ' + a)
+    return None                                          #giá trị trong hàm luôn trả về None, không có return cũng được
+b=greet                                                  #gán biến cho hàm
+print(b("Jen"))  """                                    #thay vì gọi hàm, ta gọi biến 
+
+""" def greet(a):
+    pass   """                                               #trong hàm không được để trống, dùng pass để thay thế
+
+""" def greet(x,y,z):
+    return x+y+z
+print(greet(1,2,3)) """
+
+""" def greet(*args):                                       #*args tập hợp lại các biến (đối số vị trí)
+    print(type(args))                                    #args sẽ ra tuple  
+    return sum(args)
+
+print(greet(1,2,3)) """
+
+""" a=[1,50,3,4,8]
+first, *mid, last = a
+print(first)                                             #in ra số đầu
+print(mid)                                               #in ra list giữa
+print(last)  """                                             #in ra số cuối
+
+""" def add(*list, a):
+    return(a(list))
+print(add(1,2,3,a=sum)) """             
+
+""" a=['a' for i in range (5)]                           
+print(a) """

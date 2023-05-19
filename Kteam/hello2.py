@@ -54,10 +54,10 @@
 
 # a={}                                          #sẽ ra {}
 
-# a=dict(K='kteam',hk='howkteam')
+# a=dict(tr = 5,gh = 'howkteam')
 # b=('name','kteam'),('member',69)
 # a=dict(b)                                  #sẽ tạo cặp key:value như trên (bắt buộc b phải đủ)
-# print(a)
+print(a)
 # print(b)
 # iter=('name','kteam')
 

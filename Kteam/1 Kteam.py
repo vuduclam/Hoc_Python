@@ -103,7 +103,7 @@
 # print (r4), #print (r1), print (r2), print (r3), print (r4)
 
 #############*************************************************************************
-# a='lam'
+# a='alam'
 # a1=a.capitalize()                      #viết hoa chữ cái đầu tiên
 # a2=a.upper()                           #viết hoa hết
 # a3=a.swapcase()                        # thường thành hoa, hoa thành thường
@@ -113,9 +113,9 @@
 # a7=a.encode()
 # a8=a.join(['a','b','  c'])             #cộng chuỗi (ngoăc tròn hoặc vuông)
 # a9=a.replace('ó','L',2)                #số lượng thay 2 chữ ó
-# a10=a.strip('at')                      #cắt khoảng trắng hai đầu và kí tự được đề cập ----lstrip, rstrip.
+# a10=a.strip('la')                      #cắt khoảng trắng hai đầu và kí tự được đề cập ----lstrip, rstrip.
 # a2=a.lower()                           #viết thường hết
-# print(a8)
+# print(a10)
 # print(a9)
 # print(a2)
 
@@ -225,17 +225,20 @@
 
 #*****************************************************************************************thêm phần tử trong list
 # a=[1,9,2,3,9]
-# a.append(4,5,6,7)                 #sẽ thêm cụm phần tử vào cuối cùng list trên  (nhưng tuple không có phương thức này mà chỉ có a+= )
+# a.append([4,5,6,7])               #sẽ thêm cụm phần tử vào cuối cùng list trên  (nhưng tuple không có phương thức này mà chỉ có a+= )
 # a.extend([4,5,6,7])               #sẽ thêm từng phần tử 4,5 vào list trên ở cuối
 # a.insert(1,3)                     #sẽ thêm phần từ 3 vào vị trí thứ 1
 # b=a.pop(1)                        #bỏ đi vị trí thứ 1 và nếu pop() thì tự động bỏ đi phần tử cuối cùng và trả được giá trị khi in ra 
 # b=a.remove(9)                     #bỏ đi phần tử 9 đầu tiên trong tất cả các số 9 trong list và không trả được giá trị khi in ra
 # del a[2]                          #bỏ đi vị trí thứ 2 trong list và không gán biến được b=del a[2]
 # a.reverse()                       #đảo chiều list
-# a.sort()                                    #sắp xếp theo chiều tăng dần, nhưng không lấy ra được list ***********
+# a.sort()                                    #sắp xếp số hoặc str theo chiều tăng dần, nhưng không lấy ra biến được gán ***********
+                                              #chỉ sắp xếp được list
 # a.sort(key = None, reverse = True)          #True sẽ sắp xếp giảm dần, False sẽ sắp xếp tăng dần
-# b=sorted(a)                                   #sắp xếp theo chiều tăng dần, nhưng lấy ra được list
-# print(b)
+# b=sorted(a)                                  #sắp xếp int hoặc str theo chiều tăng dần, nhưng lấy ra biến được gán
+# b=sorted((2,5,4,6)                           #sắp xếp được tuple, set, nếu dict thì sẽ ra list của key
+# b=sorted({5,2,1,6})
+# print(a)
 
 #############*********************************************************************Tuple (có thể chứa nó và những cái khác)
 # a=(1,(2,3),3)     #hoặc

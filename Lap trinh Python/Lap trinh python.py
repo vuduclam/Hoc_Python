@@ -139,8 +139,8 @@ print(a if a<b else b) """
 # print(a)
 
 # a=[1,2,3,'a']
-# print(*a)                                               #sẽ phá list in ra 1 2 3 4
-# print(*a,sep="$")                                     #sẽ phá list in ra 1$2$3$4  
+# print(*a)                                                 #sẽ phá list in ra 1 2 3 4
+# print(*a,sep="")                                       #sẽ phá list in ra 1$2$3$4  
 
 # x=2.4567                                                  #làm tròn 2 chữ số sau thập phân--str
 # print(format(x,".2f"))
@@ -307,9 +307,9 @@ print(list(enumerate(a,start=2))) """                  #sẽ tạo ra list tuple
 # print(b)
 
 #***************************************************************************Hàm (tái sử dụng lại code, gom lại các code lặp lại)
-""" def my():
+""" def my():                                              #định nghĩa hàm
     print("hello")
-my() """                                               #phải gọi hàm ra 
+my() """                                                   #phải gọi hàm ra 
 
 """ def my(a , b):                                         #để biến ở trong hàm, gọi hàm thì phải truyền vào giá trị
     print(f'{a} {b}')
@@ -318,32 +318,34 @@ my('asad','ass')   """
 
 """ def my(a , b):
     print(f'{a} {b}')
-my('asad','ass',1)   """                        #bị lỗi vì gọi hàm có 3 đối số
+my('asad','ass',1)   """                                #bị lỗi vì gọi hàm có 3 đối số
 
 """ def my(a , b = 'kk'):                              
     print(f'{a} {b}')
 my('asad')     """                                      #b đã có rồi, nên gọi hàm có a
 # my(b='jkjk',a='asad')                                 #hoặc gán lại b,a
 
-""" def my(a,b='kk'):                                   #return trả về giá trị và các câu lệnh sau nó dừng, phải gán biến c cho hàm
-    return (f'{a} {b}')
-    return 0                                            #return 0 sẽ không chạy
-c= my('asad')
+""" def my(a,b='kk'):                                   #return trả về giá trị và các câu lệnh sau nó dừng
+    return (f'{a} {b}')                                 
+c= my('asad')                                           #phải gán biến c cho hàm để có thể in ra
 print (c) """
+
+""" def my(a,b):                                     
+    return (a+b)                                                                      
+print(my(5,6))  """                                     #không tạo biến thì in ra lun 
 
 """ def my(a,b='kk'):  
-    if a:
-        return (f'{a} {b}')                             #return trả về giá trị và các câu lệnh sau nó dừng, phải gán biến c cho hàm
-    return (f'Kenny {b}')     
-
+    if a:                                               #nếu có a (False. True)
+        return (f'{a} {b}')                             
+    return (f'Kenny {b}')                               #không cần else   
 c= my('asad')                                           #vì asad là True nên đúng return trên, có thể gán tên tại vị trí gọi hàm
 print (c) """
-
-""" def my(a=[]):                                           #nếu là list, lúc gọi hàm sẽ bị thay đổi giá trị khi gọi lại
+                                         
+""" def my(a=[]):                                       #nếu là list, lúc gọi hàm sẽ bị thay đổi giá trị khi gọi lại
     a.append(2)
     print(a)
-my()
-my() """
+my()                                                    #ra [2]
+my() """                                                #ra [2,2]
 
 """ a=[52,6]
 def my():
@@ -357,33 +359,37 @@ print(a('1','2')) """                                    #string thì ghép lạ
 
 #Class function
 """ def greet(a):
-    print('hello ' + a)
-    return None                                          #giá trị trong hàm luôn trả về None, không có return cũng được
+    print('hello ' + a)                                  #giá trị trong hàm luôn trả về None, không có return cũng được
 b=greet                                                  #gán biến cho hàm
-print(b("Jen"))  """                                    #thay vì gọi hàm, ta gọi biến 
+print(b("Jen")) """                                      #thay vì gọi hàm, ta gọi biến, print cái này sẽ ra None 
 
 """ def greet(a):
-    pass   """                                               #trong hàm không được để trống, dùng pass để thay thế
+    pass   """                                           #trong hàm không được để trống, dùng pass để thay thế
 
 """ def greet(x,y,z):
     return x+y+z
 print(greet(1,2,3)) """
 
 """ def greet(*args):                                       #*args tập hợp lại các biến (đối số vị trí)
-    print(type(args))                                    #args sẽ ra tuple  
+    print(type(args))                                       #args sẽ ra tuple  
     return sum(args)
-
 print(greet(1,2,3)) """
 
 """ a=[1,50,3,4,8]
 first, *mid, last = a
-print(first)                                             #in ra số đầu
-print(mid)                                               #in ra list giữa
-print(last)  """                                             #in ra số cuối
+print(first)                                               #in ra số đầu
+print(mid)                                                 #in ra list giữa
+print(last)  """                                           #in ra số cuối
 
 """ def add(*list, a):
     return(a(list))
-print(add(1,2,3,a=sum)) """             
+print(add(1,2,3,a=sum)) """           
 
-""" a=['a' for i in range (5)]                           
+#Lưu ý (Không nên in list với số)
+""" a=[[]] * 5                                             #sẽ ra [[2],[2],[2],[2],[2]]
+a[1].append(2)                                             #không thể tạo ra [[],[2],[],[],[]]
+print(a) """
+
+""" a=[[2] for i in range (5)]                                 #muốn thay thế phần tử trong list thì dùng for                     
+a[1].append(5)
 print(a) """

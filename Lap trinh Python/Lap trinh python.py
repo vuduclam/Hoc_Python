@@ -390,6 +390,6 @@ print(add(1,2,3,a=sum)) """
 a[1].append(2)                                             #không thể tạo ra [[],[2],[],[],[]]
 print(a) """
 
-""" a=[[2] for i in range (5)]                                 #muốn thay thế phần tử trong list thì dùng for                     
+a=[[2] for i in range (5)]                                 #muốn thay thế phần tử trong list thì dùng for                     
 a[1].append(5)
-print(a) """
+print(a)
